@@ -5,6 +5,7 @@
 package lab3p2_luismendoza;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Scanner;
 
 /**
@@ -37,20 +38,223 @@ public class Lab3P2_LuisMendoza {
         
     }
     
+    public static Vehiculo addVehiculo(){
+        Scanner entrada = new Scanner(System.in);
+        System.out.println("Ingrese el color");
+        String color = entrada.next();
+        System.out.println("Ingrese la marca");
+        String marca = entrada.next();
+        marca+= entrada.nextLine();
+        String modelo = entrada.next();
+        modelo += entrada.nextLine();
+        System.out.println("Ingrese la fecha de creación");
+        System.out.println("Ingrese el año");
+        int year = entrada.nextInt();
+        System.out.println("Ingrese el mes");
+        int month = entrada.nextInt();
+        System.out.println("Ingrese el día");
+        int date = entrada.nextInt();
+        
+        Date fecha = new Date(year, month, date);
+        
+        System.out.println("Ingrese el precio");
+        int precio = entrada.nextInt();
+        System.out.println("Ingrese la cantidad de llantas");
+        int llantas = entrada.nextInt();
+        
+        Vehiculo v = new Vehiculo(color,marca,modelo,fecha,precio,llantas);
+        
+        return v;
+        
+    }
+    
     public static Carro addCarro(){
+        
+        Scanner entrada = new Scanner(System.in);
+        System.out.println("Ingrese el color");
+        String color = entrada.next();
+        System.out.println("Ingrese la marca");
+        String marca = entrada.next();
+        marca+= entrada.nextLine();
+        String modelo = entrada.next();
+        modelo += entrada.nextLine();
+        System.out.println("Ingrese la fecha de creación");
+        System.out.println("Ingrese el año");
+        int year = entrada.nextInt();
+        System.out.println("Ingrese el mes");
+        int month = entrada.nextInt();
+        System.out.println("Ingrese el día");
+        int date = entrada.nextInt();
+        
+        Date fecha = new Date(year, month, date);
+        
+        System.out.println("Ingrese el precio");
+        int precio = entrada.nextInt();
+        System.out.println("Ingrese la cantidad de llantas");
+        int llantas = entrada.nextInt();
+        
+        System.out.println("Ingrese el numero de puertas");
+        int puertas = entrada.nextInt();
+        System.out.println("Ingrese la descripción del carro");
+        String descrip = entrada.next();
+        descrip += entrada.nextLine();
+        System.out.println("Ingrese la velocidad");
+        double v = entrada.nextDouble();
+        
+        Carro c = new Carro(puertas,descrip,v,color,marca,modelo,fecha,precio,llantas);
+        
+        return c;
         
     } 
     
     public static Camion addCamion(){
+        Scanner entrada = new Scanner(System.in);
+        System.out.println("Ingrese el color");
+        String color = entrada.next();
+        System.out.println("Ingrese la marca");
+        String marca = entrada.next();
+        marca+= entrada.nextLine();
+        String modelo = entrada.next();
+        modelo += entrada.nextLine();
+        System.out.println("Ingrese la fecha de creación");
+        System.out.println("Ingrese el año");
+        int year = entrada.nextInt();
+        System.out.println("Ingrese el mes");
+        int month = entrada.nextInt();
+        System.out.println("Ingrese el día");
+        int date = entrada.nextInt();
+        
+        Date fecha = new Date(year, month, date);
+        
+        System.out.println("Ingrese el precio");
+        int precio = entrada.nextInt();
+        System.out.println("Ingrese la cantidad de llantas");
+        int llantas = entrada.nextInt();
+        
+        System.out.println("Ingrese el volumen de carga");
+        double volumen = entrada.nextDouble();
+        
+        System.out.println("Ingrese la altura");
+        double altura = entrada.nextDouble();
+        
+        System.out.println("Ingrese si es verdadero o falso que tiene retro excavadora");
+        boolean retro = entrada.nextBoolean();
+        
+        Camion c = new Camion(volumen,altura,retro,color,marca,modelo,fecha,precio,llantas);
+        
+        return c;
         
     } 
     
     public static Bus addBus(){
+        Scanner entrada = new Scanner(System.in);
+        System.out.println("Ingrese el color");
+        String color = entrada.next();
+        System.out.println("Ingrese la marca");
+        String marca = entrada.next();
+        marca+= entrada.nextLine();
+        String modelo = entrada.next();
+        modelo += entrada.nextLine();
+        System.out.println("Ingrese la fecha de creación");
+        System.out.println("Ingrese el año");
+        int year = entrada.nextInt();
+        System.out.println("Ingrese el mes");
+        int month = entrada.nextInt();
+        System.out.println("Ingrese el día");
+        int date = entrada.nextInt();
+        
+        Date fecha = new Date(year, month, date);
+        
+        System.out.println("Ingrese el precio");
+        int precio = entrada.nextInt();
+        System.out.println("Ingrese la cantidad de llantas");
+        int llantas = entrada.nextInt();
+        
+        System.out.println("Ingrese el numero de pasajeros");
+        int pasajeros = entrada.nextInt();
+        
+        System.out.println("Ingrese el tipo de bus");
+        String tipo = entrada.next();
+        tipo += entrada.nextLine();
+        
+        Bus b = new Bus(pasajeros,tipo,color,marca,modelo,fecha,precio,llantas);
+        
+        return b;
         
     }
     
     public static Moto addMoto(){
+        Scanner entrada = new Scanner(System.in);
+        System.out.println("Ingrese el color");
+        String color = entrada.next();
+        System.out.println("Ingrese la marca");
+        String marca = entrada.next();
+        marca+= entrada.nextLine();
+        String modelo = entrada.next();
+        modelo += entrada.nextLine();
+        System.out.println("Ingrese la fecha de creación");
+        System.out.println("Ingrese el año");
+        int year = entrada.nextInt();
+        System.out.println("Ingrese el mes");
+        int month = entrada.nextInt();
+        System.out.println("Ingrese el día");
+        int date = entrada.nextInt();
         
+        Date fecha = new Date(year, month, date);
+        
+        System.out.println("Ingrese el precio");
+        int precio = entrada.nextInt();
+        System.out.println("Ingrese la cantidad de llantas");
+        int llantas = entrada.nextInt();
+        
+        System.out.println("Ingrese el displacement de la moto");
+        int dis = entrada.nextInt();
+        
+        System.out.println("Ingrese si es verdadero o falso que tiene un motor electrico");
+        boolean elec = entrada.nextBoolean();
+        
+        Moto v = new Moto(dis,elec,color,marca,modelo,fecha,precio,llantas);
+        return v;
+    }
+    
+    public static Bici addBici(){
+        Scanner entrada = new Scanner(System.in);
+        System.out.println("Ingrese el color");
+        String color = entrada.next();
+        System.out.println("Ingrese la marca");
+        String marca = entrada.next();
+        marca+= entrada.nextLine();
+        String modelo = entrada.next();
+        modelo += entrada.nextLine();
+        System.out.println("Ingrese la fecha de creación");
+        System.out.println("Ingrese el año");
+        int year = entrada.nextInt();
+        System.out.println("Ingrese el mes");
+        int month = entrada.nextInt();
+        System.out.println("Ingrese el día");
+        int date = entrada.nextInt();
+        
+        Date fecha = new Date(year, month, date);
+        
+        System.out.println("Ingrese el precio");
+        int precio = entrada.nextInt();
+        System.out.println("Ingrese la cantidad de llantas");
+        int llantas = entrada.nextInt();
+        
+        System.out.println("Ingrese la descripción de la bici");
+        String descrip = entrada.next();
+        descrip += entrada.nextLine();
+        
+        System.out.println("Ingrese el radio de la rueda");
+        int radio = entrada.nextInt();
+        
+        System.out.println("Ingrese el tipo de bici");
+        String tipo = entrada.next();
+        tipo += entrada.nextLine();
+        
+        Bici b = new Bici(descrip,radio,tipo,color,marca,modelo,fecha,precio,llantas);
+        
+        return b;
     }
     
 
@@ -167,39 +371,89 @@ public class Lab3P2_LuisMendoza {
                 
                 int opcionV = 0;
                 
-                System.out.println("1. Agregar Vehiculo\n"
+                    System.out.println("Ingrese el concesionario que desea modificar");
+                    System.out.println(cons);
+                    int modVCon = entrada.nextInt();
+                   
+                    while(opcionV != 4){
+                        
+                        System.out.println("1. Agregar Vehiculo\n"
                         + "2. Quitar Vehiculo\n"
                         + "3. Modificar Vehiculo \n"
-                        + "4. Salir");
-                
-                while(opcionV!=4){
-                    switch(opcionV){
+                        + "4. Salir\n");
                         
-                        case 1: 
+                        opcionV = entrada.nextInt();
+                        
+                        switch(opcionV){
+                            
+                            case 1:
+                                
+                                System.out.println("1. Carro\n"
+                                        + "2. Camion \n"
+                                        + "3. Bus \n"
+                                        + "4. Moto\n"
+                                        + "5. Bici \n");
+                                int opcionVehiculo = entrada.nextInt();
+                                
+                                switch(opcionVehiculo){
+                                    
+                                    case 1:
+                                        cons.get(modVCon).getVehiculosEmpresa().add(addCarro());
+                                        break;
+                                        
+                                    case 2:
+                                        cons.get(modVCon).getVehiculosEmpresa().add(addCamion());
+                                        break;
+                                        
+                                    case 3:
+                                        cons.get(modVCon).getVehiculosEmpresa().add(addBus());
+                                        break;
+                                        
+                                    case 4:
+                                        cons.get(modVCon).getVehiculosEmpresa().add(addMoto());
+                                        break;
+                                        
+                                    case 5:
+                                        cons.get(modVCon).getVehiculosEmpresa().add(addBici());
+                                        break;
+                                        
+                                    default:
+                                        System.out.println("Opción no valida");
+                                        break;
+                                     
+                                }
+                                
+                                
+                                break;
+                                
+                            case 2:
+                                
+                                System.out.println("Ingrese el vehiculo que desea eliminar");
+                                System.out.println(cons.get(modVCon).getVehiculosEmpresa());
+                                int elimV = entrada.nextInt();
+                                
+                                cons.get(modVCon).getVehiculosEmpresa().remove(elimV);
+                                
+                                break;
+                                
+                            case 3:
+                                
+                                System.out.println("Ingrese el vehiculo que desea modificar");
+                                
+                                
+                                
+                                break;
+                                
                             
                             
-                            
-                            
-                            break;
-                            
-                        case 2:
-                            
-                            break;
-                            
-                        case 3:
-                            
-                            break;
-                            
-                        default:
-                            
-                            break;
+                        }
                         
                         
                         
                     }
                     
                     
-                }
+                    
                 
                 
                 
