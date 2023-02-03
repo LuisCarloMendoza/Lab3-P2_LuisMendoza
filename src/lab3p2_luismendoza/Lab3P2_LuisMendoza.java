@@ -18,6 +18,22 @@ public class Lab3P2_LuisMendoza {
      * @param args the command line arguments
      */
     
+    
+    public static Clientes addCliente(){
+        Scanner entrada = new Scanner(System.in);
+        System.out.println("Ingrese el nombre del Usuario");
+        String cadena = entrada.next();
+        cadena += entrada.nextLine();
+        System.out.println("Ingrese el ID del Usuario");
+        int id = entrada.nextInt();
+        System.out.println("Ingrese el saldo del usuario");
+        int saldo = entrada.nextInt();
+        
+        Clientes c = new Clientes(cadena,id,saldo);
+        return c;
+    }
+    
+    
     public static Concesionario addCon(){
         Scanner entrada = new Scanner(System.in);
  
@@ -348,6 +364,54 @@ public class Lab3P2_LuisMendoza {
                 
                 
             case 2: 
+                
+                System.out.println("Ingrese el concesionario con el que desea trabajar");
+                System.out.println(cons);
+                int modU = entrada.nextInt();
+                
+                System.out.println("1. Agregar Usuario\n"
+                        + "2. Quitar Usuario\n"
+                        + "3. Modificar Usuario\n");
+                int opcionUsuario = entrada.nextInt();
+                
+                switch(opcionUsuario){
+                    
+                    case 1:
+                        
+                        cons.get(modU).getClientesEmpresa().add(addCliente());
+                        
+                        
+                        break;
+                        
+                    case 2:
+                        
+                        System.out.println(cons.get(modU).getClientesEmpresa());
+                        System.out.println("Ingrese el cliente que desea eliminar");
+                        int eliminarUsuario = entrada.nextInt();
+                        cons.get(modU).getVehiculosEmpresa().remove(eliminarUsuario);
+                        
+                        
+                        break;
+                        
+                    case 3:
+                        
+                        System.out.println(cons.get(modU).getClientesEmpresa());
+                        System.out.println("Ingrese el cliente que desea Modificar");
+                        int modUsuario = entrada.nextInt();
+                        
+                        System.out.println("Ingrese el nuevo Saldo");
+                        int saldoCliente = entrada.nextInt();
+                        cons.get(modU).getClientesEmpresa().get(modUsuario).setSaldoCliente(saldoCliente);
+                        
+                        
+                        break;
+                        
+                    default:
+                        
+                        break;
+                    
+                }
+                
                 
                 
                 
@@ -955,6 +1019,9 @@ public class Lab3P2_LuisMendoza {
                 break;
                 
             case 4:
+                
+                
+                
                 
                 break;
                 
