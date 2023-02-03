@@ -22,6 +22,15 @@ public class Concesionario {
     public Concesionario() {
     }
 
+    public Concesionario(String nombreC, int idEmpresa, String direccion, int saldo) {
+        this.nombreC = nombreC;
+        this.idEmpresa = idEmpresa;
+        this.direccion = direccion;
+        this.saldo = saldo;
+    }
+    
+    
+
     public String getNombreC() {
         return nombreC;
     }
