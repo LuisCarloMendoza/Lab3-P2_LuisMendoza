@@ -47,6 +47,7 @@ public class Lab3P2_LuisMendoza {
         System.out.println("Ingrese la marca");
         String marca = entrada.next();
         marca+= entrada.nextLine();
+        System.out.println("Ingrese el modelo");
         String modelo = entrada.next();
         modelo += entrada.nextLine();
         System.out.println("Ingrese la fecha de creación");
@@ -86,6 +87,7 @@ public class Lab3P2_LuisMendoza {
         String marca = entrada.next();
         marca+= entrada.nextLine();
         String modelo = entrada.next();
+        System.out.println("Ingrese el modelo");
         modelo += entrada.nextLine();
         System.out.println("Ingrese la fecha de creación");
         System.out.println("Ingrese el año");
@@ -125,6 +127,7 @@ public class Lab3P2_LuisMendoza {
         String marca = entrada.next();
         marca+= entrada.nextLine();
         String modelo = entrada.next();
+        System.out.println("Ingrese el modelo");
         modelo += entrada.nextLine();
         System.out.println("Ingrese la fecha de creación");
         System.out.println("Ingrese el año");
@@ -161,6 +164,7 @@ public class Lab3P2_LuisMendoza {
         System.out.println("Ingrese la marca");
         String marca = entrada.next();
         marca+= entrada.nextLine();
+        System.out.println("Ingrese el modelo");
         String modelo = entrada.next();
         modelo += entrada.nextLine();
         System.out.println("Ingrese la fecha de creación");
@@ -195,6 +199,7 @@ public class Lab3P2_LuisMendoza {
         System.out.println("Ingrese la marca");
         String marca = entrada.next();
         marca+= entrada.nextLine();
+        System.out.println("Ingrese el modelo");
         String modelo = entrada.next();
         modelo += entrada.nextLine();
         System.out.println("Ingrese la fecha de creación");
@@ -232,6 +237,16 @@ public class Lab3P2_LuisMendoza {
     
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
+        
+        String color;
+        String marca;
+        String modelo;
+        int year;
+        int month; 
+        int date;
+        Date fecha;
+        int precio;
+        int llantas;
         
         ArrayList<Concesionario> cons = new ArrayList();
         System.out.println("Bienvenido a los Consecionarios");
@@ -352,78 +367,574 @@ public class Lab3P2_LuisMendoza {
                         + "2. Quitar Vehiculo\n"
                         + "3. Modificar Vehiculo \n"
                         + "4. Salir\n");
-                        
+                       
                         opcionV = entrada.nextInt();
-                        
-                        switch(opcionV){
-                            
+
+                        switch (opcionV) {
+
                             case 1:
-                                
+
                                 System.out.println("1. Carro\n"
                                         + "2. Camion \n"
                                         + "3. Bus \n"
                                         + "4. Moto\n"
                                         + "5. Bici \n");
                                 int opcionVehiculo = entrada.nextInt();
-                                
-                                switch(opcionVehiculo){
-                                    
+
+                                switch (opcionVehiculo) {
+
                                     case 1:
                                         cons.get(modVCon).getVehiculosEmpresa().add(addCarro());
                                         break;
-                                        
+
                                     case 2:
                                         cons.get(modVCon).getVehiculosEmpresa().add(addCamion());
                                         break;
-                                        
+
                                     case 3:
                                         cons.get(modVCon).getVehiculosEmpresa().add(addBus());
                                         break;
-                                        
+
                                     case 4:
                                         cons.get(modVCon).getVehiculosEmpresa().add(addMoto());
                                         break;
-                                        
+
                                     case 5:
                                         cons.get(modVCon).getVehiculosEmpresa().add(addBici());
                                         break;
-                                        
+
                                     default:
                                         System.out.println("Opción no valida");
                                         break;
-                                     
+
                                 }
-                                
-                                
+
                                 break;
-                                
+
                             case 2:
-                                
+
                                 System.out.println("Ingrese el vehiculo que desea eliminar");
-                                
+
                                 System.out.println(cons.get(modVCon).getVehiculosEmpresa());
                                 int elimV = entrada.nextInt();
-                                
+
                                 cons.get(modVCon).getVehiculosEmpresa().remove(elimV);
-                                
+
                                 break;
-                                
+
                             case 3:
-                                
+
                                 System.out.println("Ingrese el vehiculo que desea modificar");
                                 System.out.println(cons.get(modVCon).getVehiculosEmpresa());
-                                
+
                                 int opcionMod = entrada.nextInt();
-                                
-                                if(cons.get(modVCon).getVehiculosEmpresa().get(opcionMod) instanceof Carro){
+
+                                if (cons.get(modVCon).getVehiculosEmpresa().get(opcionMod) instanceof Carro) {
+                                    
+                                    System.out.println("1. Modificar color\n"
+                                            + "2. Modificar marca\n"
+                                            + "3. Modificar modelo\n"
+                                            + "4. Modificar Fecha\n"
+                                            + "5. Modificar precio\n"
+                                            + "6. Modificar llantas\n"
+                                            + "7. Modificar puertas \n"
+                                            + "8. Modificar Descripción del Motor\n"
+                                            + "9. Modificar Velocidad \n");
+                                    int modCarro = entrada.nextInt();
+                                    
+                                    switch(modCarro){
+                                        
+                                        case 1:
+                                            
+                                            System.out.println("Ingrese el color");
+                                            color = entrada.next();
+                                            cons.get(modVCon).getVehiculosEmpresa().get(opcionMod).setColor(color);
+                                            
+                                            break;
+                                            
+                                        case 2:
+                                            System.out.println("Ingrese la marca");
+                                            marca = entrada.next();
+                                            marca += entrada.nextLine();
+                                            cons.get(modVCon).getVehiculosEmpresa().get(opcionMod).setMarca(marca);
+                                            
+                                            break;
+                                            
+                                        case 3:
+                                            
+                                            System.out.println("Ingrese el modelo");
+                                            modelo = entrada.next();
+                                            modelo += entrada.nextLine();
+                                            cons.get(modVCon).getVehiculosEmpresa().get(opcionMod).setModelo(modelo);
+                                            
+                                            break;
+                                            
+                                        case 4:
+                                            System.out.println("Ingrese la fecha de creación");
+                                            System.out.println("Ingrese el año");
+                                            year = entrada.nextInt();
+                                            System.out.println("Ingrese el mes");
+                                            month = entrada.nextInt();
+                                            System.out.println("Ingrese el día");
+                                            date = entrada.nextInt();
+
+                                            fecha = new Date(year, month, date);
+                                            
+                                            cons.get(modVCon).getVehiculosEmpresa().get(opcionMod).setFechaC(fecha);
+                                            
+                                            break;
+                                            
+                                            
+                                        case 5:
+                                            
+                                            System.out.println("Ingrese el precio");
+                                            precio = entrada.nextInt();
+                                            cons.get(modVCon).getVehiculosEmpresa().get(opcionMod).setPrecio(precio);
+
+                                            break;
+                                            
+                                        case 6:
+                                            System.out.println("Ingrese la cantidad de llantas");
+                                            llantas = entrada.nextInt();
+                                            cons.get(modVCon).getVehiculosEmpresa().get(opcionMod).setLlantas(llantas);
+                                            
+                                            break;
+                                        
+                                        case 7:
+                                            
+                                            System.out.println("Ingrese el numero de puertas");
+                                            int puertas = entrada.nextInt();
+                                            ((Carro)cons.get(modVCon).getVehiculosEmpresa().get(opcionMod)).setPuertas(puertas);
+                                            
+                                            break;
+                                            
+                                        case 8:
+                                            
+                                            System.out.println("Ingrese la nueva descripción del motor");
+                                            String motorDescrip = entrada.next();
+                                            motorDescrip += entrada.nextLine();
+                                            ((Carro)cons.get(modVCon).getVehiculosEmpresa().get(opcionMod)).setDescriptionMotor(motorDescrip);
+                                            
+                                            break;
+                                            
+                                        case 9:
+                                            
+                                            System.out.println("Ingrese la nueva velocidad");
+                                            double velocityCar = entrada.nextDouble();
+                                            ((Carro)cons.get(modVCon).getVehiculosEmpresa().get(opcionMod)).setVelocity(velocityCar);
+                                            
+                                            break;
+                                            
+                                        default:
+                                            System.out.println("Opción no valida");
+                                            break;
+                                                
+                                          
+                                    }
+                                    
+                                    
                                     
                                 } else if(cons.get(modVCon).getVehiculosEmpresa().get(opcionMod) instanceof Camion){
                                     
+                                    System.out.println("1. Modificar color\n"
+                                            + "2. Modificar marca\n"
+                                            + "3. Modificar modelo\n"
+                                            + "4. Modificar Fecha\n"
+                                            + "5. Modificar precio\n"
+                                            + "6. Modificar llantas\n"
+                                            + "7. Modificar Retroexcavadora\n"
+                                            + "8. Modificar Volumen\n"
+                                            + "9. Modificar Altura \n");
+                                    int modCamion = entrada.nextInt();
+                                    
+                                    
+                                    switch(modCamion){
+                                        
+                                        case 1:
+                                            
+                                            System.out.println("Ingrese el color");
+                                            color = entrada.next();
+                                            cons.get(modVCon).getVehiculosEmpresa().get(opcionMod).setColor(color);
+                                            
+                                            break;
+                                            
+                                        case 2:
+                                            System.out.println("Ingrese la marca");
+                                            marca = entrada.next();
+                                            marca += entrada.nextLine();
+                                            cons.get(modVCon).getVehiculosEmpresa().get(opcionMod).setMarca(marca);
+                                            
+                                            break;
+                                            
+                                        case 3:
+                                            
+                                            System.out.println("Ingrese el modelo");
+                                            modelo = entrada.next();
+                                            modelo += entrada.nextLine();
+                                            cons.get(modVCon).getVehiculosEmpresa().get(opcionMod).setModelo(modelo);
+                                            
+                                            break;
+                                            
+                                        case 4:
+                                            System.out.println("Ingrese la fecha de creación");
+                                            System.out.println("Ingrese el año");
+                                            year = entrada.nextInt();
+                                            System.out.println("Ingrese el mes");
+                                            month = entrada.nextInt();
+                                            System.out.println("Ingrese el día");
+                                            date = entrada.nextInt();
+
+                                            fecha = new Date(year, month, date);
+                                            
+                                            cons.get(modVCon).getVehiculosEmpresa().get(opcionMod).setFechaC(fecha);
+                                            
+                                            break;
+                                            
+                                            
+                                        case 5:
+                                            
+                                            System.out.println("Ingrese el precio");
+                                            precio = entrada.nextInt();
+                                            cons.get(modVCon).getVehiculosEmpresa().get(opcionMod).setPrecio(precio);
+
+                                            break;
+                                            
+                                        case 6:
+                                            System.out.println("Ingrese la cantidad de llantas");
+                                            llantas = entrada.nextInt();
+                                            cons.get(modVCon).getVehiculosEmpresa().get(opcionMod).setLlantas(llantas);
+                                            
+                                            break;
+                                        
+                                        case 7:
+                                            
+                                            System.out.println("Ingrese si tiene o no tiene retro excavadora True or False");
+                                            boolean retro = entrada.nextBoolean();
+                                            ((Camion)cons.get(modVCon).getVehiculosEmpresa().get(opcionMod)).setRetro(retro);
+                                            
+                                            break;
+                                            
+                                        case 8:
+                                            
+                                            System.out.println("Ingrese el nuevo Volumen");
+                                            double VolumenC = entrada.nextDouble();
+                                            ((Camion)cons.get(modVCon).getVehiculosEmpresa().get(opcionMod)).setVolumenMax(VolumenC);
+                                            
+                                            break;
+                                            
+                                        case 9:
+                                            
+                                            System.out.println("Ingrese la nueva altura");
+                                            double alturaCamion = entrada.nextDouble();
+                                            ((Camion)cons.get(modVCon).getVehiculosEmpresa().get(opcionMod)).setAltura(alturaCamion);
+                                            
+                                            break;
+                                            
+                                        default:
+                                            System.out.println("Opción no valida");
+                                            break;
+                                                
+                                          
+                                    }
+                                    
+                                    
+                                    
                                 } else if(cons.get(modVCon).getVehiculosEmpresa().get(opcionMod) instanceof Bus){
+                                    System.out.println("1. Modificar color\n"
+                                            + "2. Modificar marca\n"
+                                            + "3. Modificar modelo\n"
+                                            + "4. Modificar Fecha\n"
+                                            + "5. Modificar precio\n"
+                                            + "6. Modificar llantas\n"
+                                            + "7. Modificar Pasajeros \n"
+                                            + "8. Modificar Tipo\n"
+                                            );
+                                    int modBus = entrada.nextInt();
+                                    
+                                    switch(modBus){
+                                        
+                                        case 1:
+                                            
+                                            System.out.println("Ingrese el color");
+                                            color = entrada.next();
+                                            cons.get(modVCon).getVehiculosEmpresa().get(opcionMod).setColor(color);
+                                            
+                                            break;
+                                            
+                                        case 2:
+                                            System.out.println("Ingrese la marca");
+                                            marca = entrada.next();
+                                            marca += entrada.nextLine();
+                                            cons.get(modVCon).getVehiculosEmpresa().get(opcionMod).setMarca(marca);
+                                            
+                                            break;
+                                            
+                                        case 3:
+                                            
+                                            System.out.println("Ingrese el modelo");
+                                            modelo = entrada.next();
+                                            modelo += entrada.nextLine();
+                                            cons.get(modVCon).getVehiculosEmpresa().get(opcionMod).setModelo(modelo);
+                                            
+                                            break;
+                                            
+                                        case 4:
+                                            System.out.println("Ingrese la fecha de creación");
+                                            System.out.println("Ingrese el año");
+                                            year = entrada.nextInt();
+                                            System.out.println("Ingrese el mes");
+                                            month = entrada.nextInt();
+                                            System.out.println("Ingrese el día");
+                                            date = entrada.nextInt();
+
+                                            fecha = new Date(year, month, date);
+                                            
+                                            cons.get(modVCon).getVehiculosEmpresa().get(opcionMod).setFechaC(fecha);
+                                            
+                                            break;
+                                            
+                                            
+                                        case 5:
+                                            
+                                            System.out.println("Ingrese el precio");
+                                            precio = entrada.nextInt();
+                                            cons.get(modVCon).getVehiculosEmpresa().get(opcionMod).setPrecio(precio);
+
+                                            break;
+                                            
+                                        case 6:
+                                            System.out.println("Ingrese la cantidad de llantas");
+                                            llantas = entrada.nextInt();
+                                            cons.get(modVCon).getVehiculosEmpresa().get(opcionMod).setLlantas(llantas);
+                                            
+                                            break;
+                                        
+                                        case 7:
+                                            
+                                            System.out.println("Ingrese el numero de pasajeros");
+                                            int pasajeros = entrada.nextInt();
+                                            ((Bus)cons.get(modVCon).getVehiculosEmpresa().get(opcionMod)).setPasajeros(pasajeros);
+                                            
+                                            break;
+                                            
+                                        case 8:
+                                            
+                                            System.out.println("Ingrese el tipo de bus");
+                                            String tipoBus = entrada.next();
+                                            tipoBus += entrada.nextLine();
+                                            ((Bus)cons.get(modVCon).getVehiculosEmpresa().get(opcionMod)).setTipoBus(tipoBus);
+                                            
+                                            break;
+                                            
+                                         
+                                        default:
+                                            System.out.println("Opción no valida");
+                                            break;
+                                                
+                                          
+                                    }
+                                    
                                     
                                 } else if(cons.get(modVCon).getVehiculosEmpresa().get(opcionMod) instanceof Moto){
                                     
+                                     System.out.println("1. Modificar color\n"
+                                            + "2. Modificar marca\n"
+                                            + "3. Modificar modelo\n"
+                                            + "4. Modificar Fecha\n"
+                                            + "5. Modificar precio\n"
+                                            + "6. Modificar llantas\n"
+                                            + "7. Modificar Desplazamiento \n"
+                                            + "8. Modificar Motor\n ");
+                                    int modMoto = entrada.nextInt();
+                                    
+                                    switch(modMoto){
+                                        
+                                        case 1:
+                                            
+                                            System.out.println("Ingrese el color");
+                                            color = entrada.next();
+                                            cons.get(modVCon).getVehiculosEmpresa().get(opcionMod).setColor(color);
+                                            
+                                            break;
+                                            
+                                        case 2:
+                                            System.out.println("Ingrese la marca");
+                                            marca = entrada.next();
+                                            marca += entrada.nextLine();
+                                            cons.get(modVCon).getVehiculosEmpresa().get(opcionMod).setMarca(marca);
+                                            
+                                            break;
+                                            
+                                        case 3:
+                                            
+                                            System.out.println("Ingrese el modelo");
+                                            modelo = entrada.next();
+                                            modelo += entrada.nextLine();
+                                            cons.get(modVCon).getVehiculosEmpresa().get(opcionMod).setModelo(modelo);
+                                            
+                                            break;
+                                            
+                                        case 4:
+                                            System.out.println("Ingrese la fecha de creación");
+                                            System.out.println("Ingrese el año");
+                                            year = entrada.nextInt();
+                                            System.out.println("Ingrese el mes");
+                                            month = entrada.nextInt();
+                                            System.out.println("Ingrese el día");
+                                            date = entrada.nextInt();
+
+                                            fecha = new Date(year, month, date);
+                                            
+                                            cons.get(modVCon).getVehiculosEmpresa().get(opcionMod).setFechaC(fecha);
+                                            
+                                            break;
+                                            
+                                            
+                                        case 5:
+                                            
+                                            System.out.println("Ingrese el precio");
+                                            precio = entrada.nextInt();
+                                            cons.get(modVCon).getVehiculosEmpresa().get(opcionMod).setPrecio(precio);
+
+                                            break;
+                                            
+                                        case 6:
+                                            System.out.println("Ingrese la cantidad de llantas");
+                                            llantas = entrada.nextInt();
+                                            cons.get(modVCon).getVehiculosEmpresa().get(opcionMod).setLlantas(llantas);
+                                            
+                                            break;
+                                        
+                                        case 7:
+                                            
+                                            System.out.println("Ingrese el nuevo Desplazamiento");
+                                            int displaceMoto = entrada.nextInt();
+                                            ((Moto)cons.get(modVCon).getVehiculosEmpresa().get(opcionMod)).setDesplaceMotor(displaceMoto);
+                                            
+                                            break;
+                                            
+                                        case 8:
+                                            
+                                            System.out.println("Ingrese si el motor es electrico True or False");
+                                            boolean motorMoto = entrada.nextBoolean();
+                                            ((Moto)cons.get(modVCon).getVehiculosEmpresa().get(opcionMod)).setMotorM(motorMoto);
+                                            
+                                            break;
+                                            
+                                         
+                                        default:
+                                            System.out.println("Opción no valida");
+                                            break;
+                                                
+                                          
+                                    }
+                                    
+                                    
                                 } else{
+                                    
+                                     System.out.println("1. Modificar color\n"
+                                            + "2. Modificar marca\n"
+                                            + "3. Modificar modelo\n"
+                                            + "4. Modificar Fecha\n"
+                                            + "5. Modificar precio\n"
+                                            + "6. Modificar llantas\n"
+                                            + "7. Modifircar la Descripción \n"
+                                            + "8. Modificar Radio\n"
+                                             + "9. Modificar el tipo de Bicicleta "
+                                            );
+                                    int modBici = entrada.nextInt();
+                                    
+                                    switch(modBici){
+                                        
+                                        case 1:
+                                            
+                                            System.out.println("Ingrese el color");
+                                            color = entrada.next();
+                                            cons.get(modVCon).getVehiculosEmpresa().get(opcionMod).setColor(color);
+                                            
+                                            break;
+                                            
+                                        case 2:
+                                            System.out.println("Ingrese la marca");
+                                            marca = entrada.next();
+                                            marca += entrada.nextLine();
+                                            cons.get(modVCon).getVehiculosEmpresa().get(opcionMod).setMarca(marca);
+                                            
+                                            break;
+                                            
+                                        case 3:
+                                            
+                                            System.out.println("Ingrese el modelo");
+                                            modelo = entrada.next();
+                                            modelo += entrada.nextLine();
+                                            cons.get(modVCon).getVehiculosEmpresa().get(opcionMod).setModelo(modelo);
+                                            
+                                            break;
+                                            
+                                        case 4:
+                                            System.out.println("Ingrese la fecha de creación");
+                                            System.out.println("Ingrese el año");
+                                            year = entrada.nextInt();
+                                            System.out.println("Ingrese el mes");
+                                            month = entrada.nextInt();
+                                            System.out.println("Ingrese el día");
+                                            date = entrada.nextInt();
+
+                                            fecha = new Date(year, month, date);
+                                            
+                                            cons.get(modVCon).getVehiculosEmpresa().get(opcionMod).setFechaC(fecha);
+                                            
+                                            break;
+                                            
+                                            
+                                        case 5:
+                                            
+                                            System.out.println("Ingrese el precio");
+                                            precio = entrada.nextInt();
+                                            cons.get(modVCon).getVehiculosEmpresa().get(opcionMod).setPrecio(precio);
+
+                                            break;
+                                            
+                                        case 6:
+                                            System.out.println("Ingrese la cantidad de llantas");
+                                            llantas = entrada.nextInt();
+                                            cons.get(modVCon).getVehiculosEmpresa().get(opcionMod).setLlantas(llantas);
+                                            
+                                            break;
+                                        
+                                        case 7:
+                                            
+                                            System.out.println("Ingrese la descripción de la bicicleta");
+                                            String descripBici = entrada.next();
+                                            descripBici += entrada.nextLine();
+                                            ((Bici)cons.get(modVCon).getVehiculosEmpresa().get(opcionMod)).setDecripBici(descripBici);
+                                            
+                                            break;
+                                            
+                                        case 8:
+                                            
+                                            System.out.println("Ingrese el radio de la bicicleta");
+                                            int radioBici = entrada.nextInt();
+                                            
+                                            ((Bici)cons.get(modVCon).getVehiculosEmpresa().get(opcionMod)).setRadioRueda(radioBici);
+                                            
+                                            break;
+                                            
+                                        case 9:
+                                            System.out.println("Ingrese el tipo de bicicleta");
+                                            String tipoBici = entrada.next();
+                                            tipoBici += entrada.nextLine();
+                                            ((Bici)cons.get(modVCon).getVehiculosEmpresa().get(opcionMod)).setTipoBici(tipoBici);
+                                            
+                                            break;
+                                            
+                                         
+                                        default:
+                                            System.out.println("Opción no valida");
+                                            break;
+                                                
+                                          
+                                    }
                                     
                                 }
                                 
@@ -439,13 +950,7 @@ public class Lab3P2_LuisMendoza {
                         
                         
                     }
-                    
-                    
-                    
-                
-                
-                
-                
+                   
                 
                 break;
                 
