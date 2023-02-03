@@ -4,6 +4,8 @@
  */
 package lab3p2_luismendoza;
 
+import java.util.Scanner;
+
 /**
  *
  * @author luiscarlomendoza
@@ -14,7 +16,9 @@ public class Lab3P2_LuisMendoza {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        
+        
+        
     }
     
 }
