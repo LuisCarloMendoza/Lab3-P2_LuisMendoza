@@ -38,35 +38,6 @@ public class Lab3P2_LuisMendoza {
         
     }
     
-    public static Vehiculo addVehiculo(){
-        Scanner entrada = new Scanner(System.in);
-        System.out.println("Ingrese el color");
-        String color = entrada.next();
-        System.out.println("Ingrese la marca");
-        String marca = entrada.next();
-        marca+= entrada.nextLine();
-        String modelo = entrada.next();
-        modelo += entrada.nextLine();
-        System.out.println("Ingrese la fecha de creación");
-        System.out.println("Ingrese el año");
-        int year = entrada.nextInt();
-        System.out.println("Ingrese el mes");
-        int month = entrada.nextInt();
-        System.out.println("Ingrese el día");
-        int date = entrada.nextInt();
-        
-        Date fecha = new Date(year, month, date);
-        
-        System.out.println("Ingrese el precio");
-        int precio = entrada.nextInt();
-        System.out.println("Ingrese la cantidad de llantas");
-        int llantas = entrada.nextInt();
-        
-        Vehiculo v = new Vehiculo(color,marca,modelo,fecha,precio,llantas);
-        
-        return v;
-        
-    }
     
     public static Carro addCarro(){
         
@@ -429,6 +400,7 @@ public class Lab3P2_LuisMendoza {
                             case 2:
                                 
                                 System.out.println("Ingrese el vehiculo que desea eliminar");
+                                
                                 System.out.println(cons.get(modVCon).getVehiculosEmpresa());
                                 int elimV = entrada.nextInt();
                                 
@@ -439,6 +411,22 @@ public class Lab3P2_LuisMendoza {
                             case 3:
                                 
                                 System.out.println("Ingrese el vehiculo que desea modificar");
+                                System.out.println(cons.get(modVCon).getVehiculosEmpresa());
+                                
+                                int opcionMod = entrada.nextInt();
+                                
+                                if(cons.get(modVCon).getVehiculosEmpresa().get(opcionMod) instanceof Carro){
+                                    
+                                } else if(cons.get(modVCon).getVehiculosEmpresa().get(opcionMod) instanceof Camion){
+                                    
+                                } else if(cons.get(modVCon).getVehiculosEmpresa().get(opcionMod) instanceof Bus){
+                                    
+                                } else if(cons.get(modVCon).getVehiculosEmpresa().get(opcionMod) instanceof Moto){
+                                    
+                                } else{
+                                    
+                                }
+                                
                                 
                                 
                                 
