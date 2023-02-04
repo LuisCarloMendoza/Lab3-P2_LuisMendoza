@@ -4,6 +4,8 @@
  */
 package lab3p2_luismendoza;
 
+import java.util.Date;
+
 /**
  *
  * @author luiscarlomendoza
@@ -13,9 +15,16 @@ public class Moto extends Vehiculo {
     private int desplaceMotor;
     private boolean motorM;
 
-    public Moto() {
-        super();
+    
+
+
+    public Moto(int desplaceMotor, boolean motorM, String color, String marca, String modelo, Date fechaC, int precio, int llantas) {
+        super(color, marca, modelo, fechaC, precio, llantas);
+        this.desplaceMotor = desplaceMotor;
+        this.motorM = motorM;
     }
+    
+    
 
     public int getDesplaceMotor() {
         return desplaceMotor;

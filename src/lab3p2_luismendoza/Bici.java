@@ -16,12 +16,10 @@ public class Bici extends Vehiculo {
     private int radioRueda;
     private String tipoBici;
 
-    public Bici() {
-        super();
-    }
+   
 
     
-    public Bici(String decripBici, int radioRueda, String tipoBici, String color, String marca, String modelo, Date fechaC, double precio, int llantas) {
+    public Bici(String decripBici, int radioRueda, String tipoBici, String color, String marca, String modelo, Date fechaC, int precio, int llantas) {
         super(color, marca, modelo, fechaC, precio, llantas);
         this.decripBici = decripBici;
         this.radioRueda = radioRueda;

@@ -16,13 +16,11 @@ public class Carro extends Vehiculo{
     private String descriptionMotor;
     private double velocity;
 
-    public Carro() {
-        super();
-    }
+    
 
     
 
-    public Carro(int puertas, String descriptionMotor, double velocity, String color, String marca, String modelo, Date fechaC, double precio, int llantas) {
+    public Carro(int puertas, String descriptionMotor, double velocity, String color, String marca, String modelo, Date fechaC, int precio, int llantas) {
         super(color, marca, modelo, fechaC, precio, llantas);
         this.puertas = puertas;
         this.descriptionMotor = descriptionMotor;

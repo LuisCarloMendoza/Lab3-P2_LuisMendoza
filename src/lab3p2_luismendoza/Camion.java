@@ -16,12 +16,10 @@ public class Camion extends Vehiculo {
     private double altura;
     private boolean retro;
 
-    public Camion() {
-        super();
-    }
+    
 
 
-    public Camion(double volumenMax, double altura, boolean retro, String color, String marca, String modelo, Date fechaC, double precio, int llantas) {
+    public Camion(double volumenMax, double altura, boolean retro, String color, String marca, String modelo, Date fechaC, int precio, int llantas) {
         super(color, marca, modelo, fechaC, precio, llantas);
         this.volumenMax = volumenMax;
         this.altura = altura;

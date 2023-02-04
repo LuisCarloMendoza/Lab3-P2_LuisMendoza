@@ -269,7 +269,7 @@ public class Lab3P2_LuisMendoza {
         
         int opcion = 0;
         
-        while(opcion != 5)
+        while(opcion != 5){
         System.out.println("Elija una de las siguientes opciones:");
         System.out.println("1. CRUD Consecionario\n"
                 + "2. CRUD Clientes\n"
@@ -288,6 +288,7 @@ public class Lab3P2_LuisMendoza {
                             + "2. Eliminar Consecionario\n"
                             + "3. Modificar Consecionario \n "
                             + "4. Salir \n");
+                    opcion2 = entrada.nextInt();
                     switch(opcion2){
                         
                         case 1:
@@ -348,7 +349,7 @@ public class Lab3P2_LuisMendoza {
                                
                                 
                             }
-                            
+                        
                             
                             break;
                             
@@ -1153,7 +1154,7 @@ public class Lab3P2_LuisMendoza {
         }
         
         
-        
+        }    
         
         
     }
