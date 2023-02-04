@@ -1022,6 +1022,123 @@ public class Lab3P2_LuisMendoza {
                 
                 
                 
+                if(cons.isEmpty()){
+                    System.out.println("No hay Concesionados");
+                }
+                else {
+                 
+                System.out.println("1. Comprar\n"
+                        + "2. Vender \n");
+                
+                int opcionCV = entrada.nextInt();
+                
+                if(opcionCV == 1 ){
+                    for (int i = 0; i < cons.size(); i++) {
+                    
+                    System.out.println("Vehiculos del Consecionado #" + i);
+                    System.out.println(cons.get(i).getVehiculosEmpresa());
+                    
+                    }
+                    System.out.println("Elija el Concesionario del cual desea comprar");
+                    int opcionCompra = entrada.nextInt();
+                    
+                    if(cons.get(opcionCompra).getClientesEmpresa().isEmpty() || cons.get(opcionCompra).getVehiculosEmpresa().isEmpty()){
+                        System.out.println("No hay Vehiculos o Clientes");
+                    } else{
+                        
+                        for (int i = 0; i < cons.get(opcionCompra).getClientesEmpresa().size(); i++) {
+                            System.out.println(cons.get(opcionCompra).getClientesEmpresa());
+                        }
+                        
+                        System.out.println("Elija el cliente");
+                        int opcionClienteCompra = entrada.nextInt();
+                        
+                        
+                        for (int i = 0; i < cons.size(); i++) {
+                    
+                        System.out.println("Vehiculos del Consecionado #" + i);
+                        System.out.println(cons.get(i).getVehiculosEmpresa());
+                    
+                        }
+                        
+                        System.out.println("Elija el vehiculo que desea comprar");
+                        int opcionCompra2 = entrada.nextInt();
+                        
+                        if(cons.get(opcionCompra).getVehiculosEmpresa().get(opcionCompra2).getPrecio() > cons.get(opcionCompra).getClientesEmpresa().get(opcionClienteCompra).getSaldoCliente()){
+                            System.out.println("No tiene el dinero suficiente");
+                        } else{
+                            
+                            int p = cons.get(opcionCompra).getVehiculosEmpresa().get(opcionCompra2).getPrecio() + cons.get(opcionCompra).getSaldo();
+                            cons.get(opcionCompra).setSaldo(p);
+                            
+                            int p1 = cons.get(opcionCompra).getClientesEmpresa().get(opcionClienteCompra).getSaldoCliente() - cons.get(opcionCompra).getVehiculosEmpresa().get(opcionCompra2).getPrecio();
+                            cons.get(opcionCompra).getClientesEmpresa().get(opcionClienteCompra).setSaldoCliente(p1);
+                        }
+                        
+                        
+                        
+                    }
+                    
+                } else if(opcionCV == 2){
+                    if(cons.isEmpty()){
+                    System.out.println("No hay Concesionados");
+                    } else {
+                        
+                        for (int i = 0; i < cons.size(); i++) {
+                            System.out.println(cons.get(i));
+                        }
+                        
+                        System.out.println("Elija el concesionario");
+                        int opcionVenta = entrada.nextInt();
+                        
+                        if(cons.get(opcionVenta).getClientesEmpresa().isEmpty() || cons.get(opcionVenta).getVehiculosEmpresa().isEmpty()){
+                            System.out.println("No hay clientes");
+                        } else{
+                            
+                            for (int i = 0; i < cons.get(opcionVenta).getClientesEmpresa().size(); i++) {
+                                
+                                System.out.println("");
+                                System.out.println(cons.get(opcionVenta).getClientesEmpresa());
+                                System.out.println("");
+                            }
+                            
+                            System.out.println("Elija el cliente");
+                           int  opcionVenta2 = entrada.nextInt();
+                           
+                            System.out.println("Elija el vehiculo del cliente");
+                            System.out.println(cons.get(opcionVenta).getClientesEmpresa().get(opcionVenta2).getVehiculosCliente());
+                           
+                            int opcionVenta3 = entrada.nextInt();
+                            
+                            if(cons.get(opcionVenta).getSaldo() < cons.get(opcionVenta).getClientesEmpresa().get(opcionVenta2).getVehiculosCliente().get(opcionVenta3).getPrecio()){
+                            System.out.println("No tiene el dinero suficiente");
+                        } else{
+                            
+                            int p3 = cons.get(opcionVenta).getSaldo() - cons.get(opcionVenta).getClientesEmpresa().get(opcionVenta2).getSaldoCliente();
+                            cons.get(opcionVenta).setSaldo(p3);
+                            cons.get(opcionVenta).getVehiculosEmpresa().remove(opcionVenta3);
+                            
+                            int p4 = cons.get(opcionVenta).getSaldo() +cons.get(opcionVenta).getClientesEmpresa().get(opcionVenta2).getSaldoCliente();
+                            cons.get(opcionVenta).getClientesEmpresa().get(opcionVenta3).getVehiculosCliente().add(cons.get(opcionVenta).getVehiculosEmpresa().get(opcionVenta2));
+                            cons.get(opcionVenta).getClientesEmpresa().get(opcionVenta2).setSaldoCliente(p4);
+                            
+                        }
+                            
+                            
+                        }
+                    } 
+                    
+                    
+                    
+                } else{
+                    System.out.println("Opción no valida");
+                }
+                
+                }
+                
+                
+                
+                
                 
                 break;
                 
