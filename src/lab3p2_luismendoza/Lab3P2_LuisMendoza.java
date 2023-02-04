@@ -1028,8 +1028,8 @@ public class Lab3P2_LuisMendoza {
                 }
                 else {
                  
-                System.out.println("1. Comprar\n"
-                        + "2. Vender \n");
+                System.out.println("1. Venta\n"
+                        + "2. Compra \n");
                 
                 int opcionCV = entrada.nextInt();
                 
